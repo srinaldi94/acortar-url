@@ -13,7 +13,7 @@
   </div>
   <div class="row" *ngIf="urlProcesada">
     <div class="col-lg-8">
-      <input type="text" class="form-control" placeholder="Url procesada" [(ngModel)]="urlShort">
+      <a [href]="urlShort" class="form-control" target="_blank">{{ urlShort }}</a>
     </div>
   </div>
   <app-spinner *ngIf="loading"></app-spinner>
