@@ -1,0 +1,20 @@
+<div class="alert alert-dismissible alert-danger" *ngIf="mostrarError">
+  <strong>{{textError | uppercase}}</strong>
+</div>
+<div class="container mt-3">
+  <h1 class="display-6 text-center">INGRESE LA URL A ACORTAR</h1>
+  <div class="row mt-5 mb-4">
+    <div class="col-lg-8">
+      <input type="text" class="form-control" placeholder="Ingrese la url" [(ngModel)]="nombreUrl">
+    </div>
+    <div class="col-lg-4">
+      <button class="btn btn-primary btn-block" (click)="procesarUrl()">ACEPTAR</button>
+    </div>
+  </div>
+  <div class="row" *ngIf="urlProcesada">
+    <div class="col-lg-8">
+      <input type="text" class="form-control" placeholder="Url procesada" [(ngModel)]="urlShort">
+    </div>
+  </div>
+  <app-spinner *ngIf="loading"></app-spinner>
+</div>
